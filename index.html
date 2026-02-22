@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>VitaSync UX/UI Case Study</title>
+  <style>
+    :root{
+      --bg:#F7F9F8;
+      --card:#FFFFFF;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --border:#e5e7eb;
+      --accent:#3E8E7E;      /* calm green */
+      --accent-2:#DFF3EE;    /* mint */
+    }
+    html { scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:rgba(247,249,248,.92);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--border);
+    }
+    .nav-inner{
+      max-width:980px;
+      margin:0 auto;
+      padding:12px 16px;
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .brand{
+      font-weight:700;
+      color:var(--accent);
+      margin-right:10px;
+    }
+    .nav a{
+      color:var(--muted);
+      text-decoration:none;
+      font-size:14px;
+      padding:6px 10px;
+      border-radius:999px;
+    }
+    .nav a:hover{
+      background:var(--accent-2);
+      color:var(--text);
+    }
+    .wrap{
+      max-width:980px;
+      margin:0 auto;
+      padding:28px 16px 60px;
+    }
+    header{
+      padding:10px 0 22px;
+    }
+    h1{
+      margin:0 0 6px 0;
+      font-size:36px;
+      line-height:1.2;
+      letter-spacing:-0.02em;
+    }
+    .subtitle{
+      margin:0;
+      color:var(--muted);
+      font-size:16px;
+      max-width:72ch;
+    }
+    section{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:22px 18px;
+      margin:16px 0;
+    }
+    section h2{
+      margin:0 0 10px 0;
+      font-size:22px;
+      letter-spacing:-0.01em;
+    }
+    p{ margin:10px 0; }
+    .img{
+      margin:14px 0 6px;
+      border:1px solid var(--border);
+      border-radius:14px;
+      overflow:hidden;
+      background:#fff;
+    }
+    .img img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+    .caption{
+      color:var(--muted);
+      font-size:13px;
+      margin:6px 2px 0;
+    }
+    .link{
+      word-break:break-word;
+      color:var(--accent);
+      text-decoration:none;
+    }
+    .link:hover{ text-decoration:underline; }
+    .refs a{ color:var(--accent); }
+    .refs li{ margin:8px 0; }
+    .small{ color:var(--muted); font-size:14px; }
+  </style>
+</head>
+
+<body>
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="brand">VitaSync</div>
+      <a href="#introduction">Introduction</a>
+      <a href="#challenge">Challenge</a>
+      <a href="#research">Research</a>
+      <a href="#personas">Personas</a>
+      <a href="#journey">User Journey</a>
+      <a href="#flow">User Flow</a>
+      <a href="#sketches">Sketches</a>
+      <a href="#wireframes">Wireframes</a>
+      <a href="#storyboard">Storyboard</a>
+      <a href="#inspiration">Inspiration</a>
+      <a href="#iteration">Iteration</a>
+      <a href="#palette">Palette</a>
+      <a href="#typography">Typography</a>
+      <a href="#prototype">Prototype</a>
+      <a href="#testing">Testing</a>
+      <a href="#reflection">Reflection</a>
+      <a href="#conclusion">Conclusion</a>
+      <a href="#references">References</a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <header>
+      <h1>VitaSync UX/UI Case Study</h1>
+      <p class="subtitle">
+        A health companion app concept that supports medication management, doctor appointments,
+        and patient–provider communication for individuals living with chronic health conditions.
+      </p>
+      <p class="small">SOEN 357 — Winter 2026</p>
+    </header>
+
+    <section id="introduction">
+      <h2>Introduction</h2>
+      <p>
+        Managing a chronic illness is a daily responsibility that requires consistency, organization, and mental clarity.
+        Many people still rely on disjointed tools such as paper notes, calendar alerts, or separate apps.
+      </p>
+      <p>
+        VitaSync is designed as a health companion that centralizes medication tracking, appointment scheduling,
+        and doctor communication. The goal is to reduce cognitive load and build confidence in everyday health management.
+      </p>
+    </section>
+
+    <section id="challenge">
+      <h2>Understanding the Challenge</h2>
+      <p>
+        Chronic care requires managing repetitive routines with little margin for error. Fragmented systems increase the
+        risk of missed doses and forgotten appointments. Many existing apps focus on only one feature, forcing users to
+        switch between platforms. VitaSync aims to unify key health tasks in one calm, accessible experience.
+      </p>
+    </section>
+
+    <section id="research">
+      <h2>Research Method</h2>
+      <p>
+        I researched how people manage chronic conditions on a daily basis through surveys and casual interviews.
+        Many rely on disconnected systems (paper notes, alarms, multiple apps), which leads to confusion and missed tasks.
+        Emotional stress around forgetting medications or appointments was a recurring theme. This project is also informed
+        by personal experience living with grandparents managing multiple chronic conditions, reinforcing the need for
+        clarity and accessibility.
+      </p>
+    </section>
+
+    <section id="personas">
+      <h2>Personas</h2>
+      <p>
+        Two personas were created to represent recurring patterns in user needs and behaviours related to medication adherence,
+        appointments, and communication with healthcare providers.
+      </p>
+
+      <div class="img">
+        <img src="assets/persona-john.png" alt="Persona: John" />
+      </div>
+      <div class="caption">Persona: John</div>
+
+      <div class="img">
+        <img src="assets/persona-emily.png" alt="Persona: Emily" />
+      </div>
+      <div class="caption">Persona: Emily</div>
+    </section>
+
+    <section id="journey">
+      <h2>User Journey</h2>
+      <p>
+        User journey maps show how each persona experiences key stages of health management and how VitaSync supports
+        thoughts, actions, and emotions across the flow.
+      </p>
+
+      <div class="img">
+        <img src="assets/journey-john.png" alt="User Journey Map: John" />
+      </div>
+      <div class="caption">User Journey Map: John</div>
+
+      <div class="img">
+        <img src="assets/journey-emily.png" alt="User Journey Map: Emily" />
+      </div>
+      <div class="caption">User Journey Map: Emily</div>
+    </section>
+
+    <section id="flow">
+      <h2>User Flow Chart/Navigation</h2>
+      <p>
+        The user flow outlines how users move from login/onboarding to the main features: medications, doctors,
+        scheduling, messaging, and profile.
+      </p>
+
+      <div class="img">
+        <img src="assets/user-flow.png" alt="VitaSync User Flow Diagram" />
+      </div>
+      <div class="caption">User Flow Diagram</div>
+    </section>
+
+    <section id="sketches">
+      <h2>Sketches</h2>
+      <p>
+        Early sketches helped explore layout and navigation patterns before moving into wireframes.
+      </p>
+
+      <div class="img">
+        <img src="assets/sketches.jpg" alt="Initial VitaSync sketches" />
+      </div>
+      <div class="caption">Initial sketches</div>
+    </section>
+
+    <section id="wireframes">
+      <h2>Wireframes</h2>
+      <p>
+        Wireframes provided a low-fidelity structure of VitaSync, helping focus on hierarchy, functionality,
+        and navigation without getting distracted by visual styling too early.
+      </p>
+
+      <div class="img">
+        <img src="assets/wireframes.png" alt="VitaSync wireframes" />
+      </div>
+      <div class="caption">Wireframes</div>
+    </section>
+
+    <section id="storyboard">
+      <h2>Storyboard</h2>
+      <p>
+        A storyboard illustrates VitaSync in a real-world context, showing how reminders support a user’s routine and
+        reduce missed medication events.
+      </p>
+
+      <div class="img">
+        <img src="assets/storyboard.png" alt="VitaSync storyboard" />
+      </div>
+      <div class="caption">Storyboard</div>
+    </section>
+
+    <section id="inspiration">
+      <h2>Inspiration Board</h2>
+      <p>
+        The inspiration board guided the visual direction by reviewing patterns from existing health and wellness apps
+        (layout, typography, tone, and color usage).
+      </p>
+
+      <div class="img">
+        <img src="assets/inspiration-board.png" alt="Inspiration board" />
+      </div>
+      <div class="caption">Inspiration board</div>
+    </section>
+
+    <section id="iteration">
+      <h2>Iteration</h2>
+      <p>
+        Iteration helped refine the layout and flows to reduce friction, improve clarity, and keep the experience calm
+        and supportive.
+      </p>
+
+      <div class="img">
+        <img src="assets/iteration.png" alt="Design iteration" />
+      </div>
+      <div class="caption">Iteration</div>
+    </section>
+
+    <section id="palette">
+      <h2>Color Palette</h2>
+      <p>
+        VitaSync uses calm green tones associated with health, reassurance, and balance. Soft mint backgrounds and
+        off-white surfaces keep the interface clean and approachable while allowing key information to stand out.
+      </p>
+
+      <div class="img">
+        <img src="assets/color-palette.png" alt="Color palette" />
+      </div>
+      <div class="caption">Color palette</div>
+    </section>
+
+    <section id="typography">
+      <h2>Typography</h2>
+      <p>
+        Inter is selected for clarity and readability in mobile interfaces. Using a single font family maintains
+        consistency and supports a clean, accessible experience.
+      </p>
+
+      <div class="img">
+        <img src="assets/typography.png" alt="Typography" />
+      </div>
+      <div class="caption">Typography</div>
+    </section>
+
+    <section id="prototype">
+      <h2>Clickable Prototype/App Navigation</h2>
+      <p>
+        Prototype link:
+        <a class="link" href="https://www.figma.com/proto/sk4eSqJU5a1o3MABBcljaG/Untitled?node-id=0-1&t=qkjAz37iH4ryCpvj-1" target="_blank" rel="noopener noreferrer">
+          https://www.figma.com/proto/sk4eSqJU5a1o3MABBcljaG/Untitled?node-id=0-1&t=qkjAz37iH4ryCpvj-1
+        </a>
+      </p>
+
+      <div class="img">
+        <img src="assets/prototype-screens.png" alt="Prototype screens" />
+      </div>
+      <div class="caption">Prototype screens</div>
+    </section>
+
+    <section id="testing">
+      <h2>Usability Testing</h2>
+      <p>
+        To evaluate VitaSync, I would conduct a moderated usability test with 5–7 participants who manage medications
+        or regular appointments. Tasks include adding a medication, setting a reminder, checking an upcoming appointment,
+        and sending a message. Feedback would be collected through observation, task success rates, and short interviews.
+        I would analyze recurring points of confusion and iterate by improving navigation labels, simplifying layouts,
+        and refining the interaction flow.
+      </p>
+    </section>
+
+    <section id="reflection">
+      <h2>Reflection</h2>
+      <p>
+        Designing VitaSync reinforced the importance of user-centered decisions, especially for health-related tools.
+        Personas, journeys, wireframes, and storyboards helped keep the experience focused on clarity, accessibility,
+        and emotional comfort for users managing chronic conditions.
+      </p>
+    </section>
+
+    <section id="conclusion">
+      <h2>Conclusion</h2>
+      <p>
+        VitaSync is designed as a supportive digital companion that helps users manage medications, appointments,
+        and communication with healthcare professionals in a more organized way. Grounded in research and real-life
+        scenarios, the app addresses missed doses, forgotten appointments, and fragmented tools while promoting a calm,
+        reassuring user experience.
+      </p>
+    </section>
+
+    <section id="references">
+      <h2>References</h2>
+      <ol class="refs">
+        <li>
+          Pew Research Center. (2010, March 24). <em>Adults living with chronic disease.</em>
+          <a class="link" href="https://www.pewresearch.org/internet/2010/03/24/adults-living-with-chronic-disease/" target="_blank" rel="noopener noreferrer">
+            https://www.pewresearch.org/internet/2010/03/24/adults-living-with-chronic-disease/
+          </a>
+        </li>
+        <li>
+          ResearchGate. (n.d.). <em>Figure: The pie chart showing the percentage of commonly used drugs by self-medicators.</em>
+          <a class="link" href="https://www.researchgate.net/figure/Figure-The-pi-chart-showing-the-percentage-of-commonly-used-drugs-by-self-medicators_fig4_384149332" target="_blank" rel="noopener noreferrer">
+            https://www.researchgate.net/figure/Figure-The-pi-chart-showing-the-percentage-of-commonly-used-drugs-by-self-medicators_fig4_384149332
+          </a>
+        </li>
+        <li>
+          Canadian Institutes of Health Research. (n.d.). <em>Chronic disease and health research.</em>
+          <a class="link" href="https://cihr-irsc.gc.ca/e/43625.html" target="_blank" rel="noopener noreferrer">
+            https://cihr-irsc.gc.ca/e/43625.html
+          </a>
+        </li>
+        <li>
+          Canva. (n.d.). <em>Canva (Version web) [Design tool].</em>
+          <a class="link" href="https://www.canva.com/" target="_blank" rel="noopener noreferrer">https://www.canva.com/</a>
+        </li>
+        <li>
+          Figma, Inc. (n.d.). <em>Figma (Version web) [Design and prototyping tool].</em>
+          <a class="link" href="https://www.figma.com/" target="_blank" rel="noopener noreferrer">https://www.figma.com/</a>
+        </li>
+      </ol>
+    </section>
+  </div>
+</body>
+</html>
